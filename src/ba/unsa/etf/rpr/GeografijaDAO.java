@@ -233,8 +233,8 @@ public class GeografijaDAO {
             promijeniGradUpit.setString(1, grad.getNaziv());
             promijeniGradUpit.setInt(2, grad.getBrojStanovnika());
             promijeniGradUpit.setInt(3, grad.getDrzava().getId());
-            promijeniGradUpit.setInt(4, grad.getId());
-            promijeniGradUpit.setInt(5, grad.getNadmorskaVisina());
+            promijeniGradUpit.setInt(4, grad.getNadmorskaVisina());
+            promijeniGradUpit.setInt(5, grad.getId());
             promijeniGradUpit.executeUpdate();
 
         } catch (SQLException e) {
