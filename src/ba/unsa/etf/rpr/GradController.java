@@ -101,7 +101,11 @@ public class GradController {
         grad.setNaziv(fieldNaziv.getText());
         grad.setBrojStanovnika(Integer.parseInt(fieldBrojStanovnika.getText()));
         grad.setDrzava(choiceDrzava.getValue());
-        grad.setNadmorskaVisina(Integer.parseInt(fieldNadmorskaVisina.getText()));
+        try {
+            grad.setNadmorskaVisina(Integer.parseInt(fieldNadmorskaVisina.getText()));
+        }catch(NumberFormatException e) {
+            //
+        }
         Stage stage = (Stage) fieldNaziv.getScene().getWindow();
         stage.close();
     }
