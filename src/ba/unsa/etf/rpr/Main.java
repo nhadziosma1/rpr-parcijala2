@@ -12,7 +12,8 @@ import java.util.Scanner;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception
+    {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"));
         GlavnaController ctrl = new GlavnaController();
         loader.setController(ctrl);

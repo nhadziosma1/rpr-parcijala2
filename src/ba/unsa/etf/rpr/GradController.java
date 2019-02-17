@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class GradController {
     public TextField fieldNaziv;
     public TextField fieldBrojStanovnika;
-    public TextField fieldNadmorskaVisina;
     public ChoiceBox<Drzava> choiceDrzava;
     public ObservableList<Drzava> listDrzave;
     private Grad grad;
@@ -29,7 +28,6 @@ public class GradController {
         if (grad != null) {
             fieldNaziv.setText(grad.getNaziv());
             fieldBrojStanovnika.setText(Integer.toString(grad.getBrojStanovnika()));
-            fieldNadmorskaVisina.setText(Integer.toString(grad.getNadmorskaVisina()));
             // choiceDrzava.getSelectionModel().select(grad.getDrzava());
             // ovo ne radi jer grad.getDrzava() nije identički jednak objekat kao član listDrzave
             for (Drzava drzava : listDrzave)
@@ -78,22 +76,6 @@ public class GradController {
             fieldBrojStanovnika.getStyleClass().add("poljeIspravno");
         }
 
-        int nadmorskaVisina = 0;
-        try {
-            nadmorskaVisina = Integer.parseInt(fieldNadmorskaVisina.getText());
-        } catch (NumberFormatException e) {
-            // ...
-        }
-
-        if (nadmorskaVisina < -400 || nadmorskaVisina > 8000) {
-            fieldNadmorskaVisina.getStyleClass().removeAll("poljeIspravno");
-            fieldNadmorskaVisina.getStyleClass().add("poljeNijeIspravno");
-            sveOk = false;
-        } else {
-            fieldNadmorskaVisina.getStyleClass().removeAll("poljeNijeIspravno");
-            fieldNadmorskaVisina.getStyleClass().add("poljeIspravno");
-        }
-
 
         if (!sveOk) return;
 
@@ -101,11 +83,6 @@ public class GradController {
         grad.setNaziv(fieldNaziv.getText());
         grad.setBrojStanovnika(Integer.parseInt(fieldBrojStanovnika.getText()));
         grad.setDrzava(choiceDrzava.getValue());
-        try {
-            grad.setNadmorskaVisina(Integer.parseInt(fieldNadmorskaVisina.getText()));
-        }catch(NumberFormatException e) {
-            //
-        }
         Stage stage = (Stage) fieldNaziv.getScene().getWindow();
         stage.close();
     }

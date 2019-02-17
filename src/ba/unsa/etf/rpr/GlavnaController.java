@@ -27,12 +27,13 @@ public class GlavnaController {
     public TableColumn colGradId;
     public TableColumn colGradNaziv;
     public TableColumn colGradStanovnika;
-    public TableColumn colGradNadmorskaVisina;
     public TableColumn<Grad,String> colGradDrzava;
-    private GeografijaDAO dao;
+    public TableColumn colGradNadmorskaVisina;
+    private GeografijaDAO dao = null;
     private ObservableList<Grad> listGradovi;
 
-    public GlavnaController() {
+    public GlavnaController()
+    {
         dao = GeografijaDAO.getInstance();
         listGradovi = FXCollections.observableArrayList(dao.gradovi());
     }
@@ -43,7 +44,7 @@ public class GlavnaController {
         colGradId.setCellValueFactory(new PropertyValueFactory("id"));
         colGradNaziv.setCellValueFactory(new PropertyValueFactory("naziv"));
         colGradStanovnika.setCellValueFactory(new PropertyValueFactory("brojStanovnika"));
-        colGradNadmorskaVisina.setCellValueFactory(new PropertyValueFactory("nadmorskaVisina"));
+        colGradNadmorskaVisina.setCellValueFactory(new PropertyValueFactory<>("nadmorskaVisina"));
         colGradDrzava.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getDrzava().getNaziv()));
     }
 

@@ -119,4 +119,3 @@ public class IspitGradControllerTest {
         assertEquals(7999, grad.getNadmorskaVisina());
     }
 }
-

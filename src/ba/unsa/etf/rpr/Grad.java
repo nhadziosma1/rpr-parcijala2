@@ -1,21 +1,34 @@
 package ba.unsa.etf.rpr;
 
-public class Grad {
+public class Grad
+{
+    //ATRIBUTI
     private int id;
     private String naziv;
     private int brojStanovnika;
     private Drzava drzava;
     private int nadmorskaVisina;
 
-    public Grad(int id, String naziv, int brojStanovnika, Drzava drzava, int nadmorskaVisina) {
+    //KONSTURKTORI
+    public Grad(int id, String naziv, int brojStanovnika, Drzava drzava, int nadmorska)
+    {
         this.id = id;
         this.naziv = naziv;
         this.brojStanovnika = brojStanovnika;
         this.drzava = drzava;
-        this.nadmorskaVisina = nadmorskaVisina;
+        this.nadmorskaVisina = nadmorska;
     }
 
     public Grad() {
+    }
+
+    //GETTERI I SETTERI
+    public int getNadmorskaVisina() {
+        return nadmorskaVisina;
+    }
+
+    public void setNadmorskaVisina(int nadmorskaVisina) {
+        this.nadmorskaVisina = nadmorskaVisina;
     }
 
     public int getId() {
@@ -48,14 +61,6 @@ public class Grad {
 
     public void setDrzava(Drzava drzava) {
         this.drzava = drzava;
-    }
-
-    public int getNadmorskaVisina() {
-        return nadmorskaVisina;
-    }
-
-    public void setNadmorskaVisina(int nadmorskaVisina) {
-        this.nadmorskaVisina = nadmorskaVisina;
     }
 
     @Override
