@@ -19,7 +19,7 @@
           <TableColumn fx:id="colGradStanovnika" prefWidth="90.0" text="Stanovnika" />
           <TableColumn fx:id="colGradDrzava" prefWidth="185.0" text="Država" />
 
-          <TableColumn fx:id="colGradNadmorskaVisina" text="nadmorska visina"/>
+          <TableColumn fx:id="colGradNadmorskaVisina" text="Nadmorska visina"/>
         </columns>
       </TableView>
    </center>

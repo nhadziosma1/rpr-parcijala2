@@ -74,7 +74,8 @@ public class IspitGlavnaTest {
     }
 
     @Test
-    public void testIzmijeniGradNadmorska(FxRobot robot) {
+    public void testIzmijeniGradNadmorska(FxRobot robot)
+    {
         ctrl.resetujBazu();
 
         // 250 ne smije biti default nadmorska visina za Graz jer je to "varanje"
